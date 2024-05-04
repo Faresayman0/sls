@@ -15,7 +15,9 @@ class BestPlace2 extends StatelessWidget {
         children: <Widget>[
           // شريط الأعلى وزر Skip
           Positioned(
-              top: 40, left: 20, child: Image.asset("images/hello/icon.png")),
+              top: 40,
+              left: 20,
+              child: Image.asset("images/hello/Frame 23.png")),
           Positioned(
             top: 40,
             right: 20,
@@ -39,38 +41,17 @@ class BestPlace2 extends StatelessWidget {
             top: screenHeight * 0.25, // وضع النص في ربع الشاشة العلوي
             left: 20,
             right: 20,
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                RichText(
-                  text: const TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'Find best place\nwith ',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'good price',
-                        style: TextStyle(
-                          color: Color(0xffB66404), // تغيير لون النص هنا
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 8),
                   child: Text(
-                    'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed.',
+                    'Discover with us the features of the  AKARI application',
                     textAlign: TextAlign.start,
                     style: TextStyle(
+                      fontSize: 25,
                       color: Color(0xff292929),
                     ),
                   ),

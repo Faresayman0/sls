@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salsabil/auth/login_page.dart';
+import 'package:salsabil/map/first_screen_map.dart';
 import 'package:salsabil/pages/home/home_page.dart';
 import 'package:salsabil/widget/const_image.dart';
 import 'package:salsabil/widget/custom_text_feild.dart';
@@ -10,6 +11,7 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
         body: SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,7 +87,7 @@ class RegisterPage extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
-                  return const HomePage();
+                  return const FirstScreenMap();
                 }));
               },
               child: const Text(

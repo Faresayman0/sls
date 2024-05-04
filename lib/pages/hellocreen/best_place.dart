@@ -16,7 +16,9 @@ class BestPlace extends StatelessWidget {
         children: <Widget>[
           // شريط الأعلى وزر Skip
           Positioned(
-              top: 40, left: 20, child: Image.asset("images/hello/icon.png")),
+              top: 50,
+              left: 20,
+              child: Image.asset("images/hello/Frame 23.png")),
           Positioned(
             top: 40,
             right: 20,
@@ -24,7 +26,7 @@ class BestPlace extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
-                  return  ChoseLogIn();
+                  return ChoseLogIn();
                 }));
               },
               style: ElevatedButton.styleFrom(
@@ -69,7 +71,7 @@ class BestPlace extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.only(top: 8),
                   child: Text(
-                    'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed.',
+                    'With AKARI Explore More Properties with Good prices ',
                     textAlign: TextAlign.start,
                     style: TextStyle(
                       color: Color(0xff292929),

@@ -7,28 +7,13 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffEDC494),
       body: Stack(
         children: <Widget>[
           // صورة الخلفية
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("images/hello/start.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
+
           // التدرج اللوني الشفاف
-          Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.transparent, Colors.black54],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [.1, 1.0],
-              ),
-            ),
-          ),
+
           // المحتويات فوق الصورة
           Positioned(
             bottom: 80,
@@ -37,22 +22,20 @@ class StartScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Image.asset("images/hello/Group 13.png"),
+                Image.asset("images/hello/Group 52.png"),
                 const SizedBox(
                   height: 16,
                 ),
-                const Text(
-                  "immobily",
-                  style: TextStyle(color: Colors.white, fontSize: 30),
-                ),
-                const SizedBox(height: 80), // توفير مساحة بين النص والزر
+                Image.asset("images/hello/logo.png"),
+                const SizedBox(height: 160), // توفير مساحة بين النص والزر
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         shape: const RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
-                        padding: const EdgeInsets.symmetric(horizontal: 50),
-                        backgroundColor: const Color(0xffB66404)),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 50, vertical: 18),
+                        backgroundColor: Colors.black),
                     onPressed: () {
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (context) {

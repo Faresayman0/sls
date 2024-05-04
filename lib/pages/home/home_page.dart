@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => showWelcomeDialog(context));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +59,28 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
+
+                  Positioned(
+                      top: 100,
+                      left: 30,
+                      child: Row(
+                        children: [
+                          const Text(
+                            "Hey, Imen ! \nLet's start exploring ",
+                            style: TextStyle(
+                                fontSize: 25, color: Color(0xff252B5C)),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  border: Border.all(color: Colors.black)),
+                              child: Image.asset('images/hello/Group 52.png',
+                                  height: 50)),
+                        ],
+                      )),
                   // Icons
                   Positioned(
                     top: 20,
@@ -169,6 +204,48 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  void showWelcomeDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          backgroundColor: const Color(0xffF48A00),
+          content: const Padding(
+            padding: EdgeInsets.only(top: 50),
+            child: SizedBox(
+              width: 40, // يمكنك تعديل هذه القيمة لتغيير العرض
+              height: 300, // تعديل الارتفاع حسب الحاجة
+              child: Text(
+                "Welcome there in \nAKARI\n I hope we meet your\n expectations.\n \nDo not hesitate to test the chatbot now.",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
+            ),
+          ),
+          actions: <Widget>[
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xff5200FF)),
+                child: const Text(
+                  "Start Now",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop(); // Closes the dialog
+                },
+              ),
+            )
+          ],
+        );
+      },
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salsabil/auth/register_page.dart';
+import 'package:salsabil/map/first_screen_map.dart';
 import 'package:salsabil/pages/home/home_page.dart';
 import 'package:salsabil/widget/const_image.dart';
 import 'package:salsabil/widget/custom_text_feild.dart';
@@ -99,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                       ? () {
                          Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return const HomePage();
+                    return const FirstScreenMap();
                   }));
                         }
                       : null,
