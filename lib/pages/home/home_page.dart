@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:salsabil/const/const_home.dart';
+import 'package:salsabil/pages/home/description.dart';
+import 'package:salsabil/pages/home/subpages/buy.dart';
+import 'package:salsabil/pages/home/subpages/sell.dart';
+import 'package:salsabil/widget/custo_card_offer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,197 +20,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     WidgetsBinding.instance
         .addPostFrameCallback((_) => showWelcomeDialog(context));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            // Top Bar Stack
-            SizedBox(
-              height: 180,
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  // Profile Image with ClipRRect
-                  Positioned(
-                    top: -50,
-                    left: -50,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(100),
-                      child: Container(
-                        color: Theme.of(context).scaffoldBackgroundColor,
-                        child: const CircleAvatar(
-                          backgroundImage:
-                              AssetImage('images/home/Ellipse 7.png'),
-                          radius: 120,
-                        ),
-                      ),
-                    ),
-                  ),
-                  // Constantine Text
-                  Positioned(
-                    top: 30,
-                    left: 30,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 30),
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        "Constantine",
-                        style: TextStyle(color: Color(0xff252B5C)),
-                      ),
-                    ),
-                  ),
-
-                  Positioned(
-                      top: 100,
-                      left: 30,
-                      child: Row(
-                        children: [
-                          const Text(
-                            "Hey, Imen ! \nLet's start exploring ",
-                            style: TextStyle(
-                                fontSize: 25, color: Color(0xff252B5C)),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  border: Border.all(color: Colors.black)),
-                              child: Image.asset('images/hello/Group 52.png',
-                                  height: 50)),
-                        ],
-                      )),
-                  // Icons
-                  Positioned(
-                    top: 20,
-                    right: 20,
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 70,
-                          width: 70,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: const Color(0xffE8B170),
-                              width: 2.0,
-                            ),
-                          ),
-                          child: IconButton(
-                            icon: const Icon(
-                              Icons.notifications,
-                              size: 40,
-                              color: Color(0xffE8B170),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Container(
-                          height: 80,
-                          width: 80,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: const Color(0xffD9D9D9),
-                              width: 2.0,
-                            ),
-                          ),
-                          padding: const EdgeInsets.all(8.0),
-                          child: ClipOval(
-                            child: Container(
-                              height: 60,
-                              width: 60,
-                              color: Colors.transparent,
-                              child: Image.asset(
-                                "images/home/394d3c813d88448c39519bbe9878f691.png",
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            // Search Field
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color(0xffD9D9D9).withOpacity(0.5),
-                  hintText: 'Search House, Apartment, etc',
-                  suffixIcon: const Icon(Icons.segment),
-                  prefixIcon: const Icon(Icons.search, color: Colors.black),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(2),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-              ),
-            ),
-            // Category Buttons
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: SizedBox(
-                height: 100,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    'All',
-                    'Houses',
-                    'Appartement',
-                    'Appartement',
-                    'Appartement',
-                  ].map((String category) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5),
-                      child: Chip(
-                        label: Text(category),
-                        backgroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                ),
-              ),
-            ),
-            // Horizontal List of Cards
-            Expanded(
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return SizedBox(
-                    width: 320,
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Container(
-                        child: SizedBox(
-                          child: Image.asset('images/home/Frame 108.png'),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 
   void showWelcomeDialog(BuildContext context) {
@@ -246,6 +61,214 @@ class _HomePageState extends State<HomePage> {
           ],
         );
       },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const ConstHomepage(
+                showBackButton: false,
+              ),
+              // Top Bar Stack
+              // Category Buttons
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: SizedBox(
+                  height: 100,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      'All',
+                      'Houses',
+                      'Appartement',
+                      'Appartement',
+                      'Appartement',
+                    ].map((String category) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                        child: Chip(
+                          label: Text(category),
+                          backgroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
+              // Horizontal List of Cards
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return SizedBox(
+                      width: 320,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Container(
+                          child: SizedBox(
+                            child: Image.asset('images/home/Frame 108.png'),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "Offers",
+                      style: TextStyle(color: Color(0xff2F0093), fontSize: 18),
+                    ),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return const DescriptionPage();
+                          }));
+                        },
+                        child: const Text(
+                          "view all",
+                          style: TextStyle(color: Color(0xff234F68)),
+                        ))
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return const CustomCardOffer();
+                  },
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 15),
+                child: Text(
+                  "Search With Location",
+                  style: TextStyle(color: Color(0xff2F0093), fontSize: 18),
+                ),
+              ),
+              SizedBox(
+                height: 80,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return SizedBox(
+                      width: 100,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Container(
+                          child: SizedBox(
+                            child: Image.asset(
+                              'images/home/Location - Small.png',
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 15),
+                child: Text(
+                  "How we can help you ?",
+                  style: TextStyle(fontSize: 18, color: Color(0xff2F0093)),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xff2F0093),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 20)),
+                      onPressed: () {
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) {
+                          return const BuyPage();
+                        }));
+                      },
+                      child: const Text(
+                        "Want to Buy",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      )),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xff2F0093),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 20)),
+                      onPressed: () {
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) {
+                          return const SellPage();
+                        }));
+                      },
+                      child: const Text(
+                        "Want to sell",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      )),
+                ],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Center(
+                child: Text(
+                  "Discover Now Our Pack !",
+                  style: TextStyle(color: Color(0xff2F0093), fontSize: 18),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Center(
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xffF48A00),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40, vertical: 20)),
+                    onPressed: () {},
+                    child: const Text(
+                      "Subscribe with us ",
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    )),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Center(
+                child: Image.asset("images/home/Frame 23.png"),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

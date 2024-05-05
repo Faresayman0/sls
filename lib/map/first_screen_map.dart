@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salsabil/components/navbar.dart';
 import 'package:salsabil/pages/home/home_page.dart';
 
 class FirstScreenMap extends StatelessWidget {
@@ -70,7 +71,7 @@ class FirstScreenMap extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
+                  MaterialPageRoute(builder: (context) => const Navbar()),
                 );
               },
               style: ElevatedButton.styleFrom(

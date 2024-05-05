@@ -24,49 +24,43 @@ class RegisterPage extends StatelessWidget {
                 style: TextStyle(color: Color(0xffB66404), fontSize: 25),
               )),
           const CustomTextField(
-            label: 'NOM',
             hint: 'Enter your nom',
           ),
           const SizedBox(
             height: 10,
           ),
           const CustomTextField(
-            label: 'PRENOM',
+            
             hint: 'Enter your prenom',
           ),
           const SizedBox(
             height: 10,
           ),
           const CustomTextField(
-            label: 'ADDRESSE',
             hint: 'Enter your address',
           ),
           const SizedBox(
             height: 10,
           ),
           const CustomTextField(
-            label: 'TRAVAIL',
             hint: 'Enter your travail',
           ),
           const SizedBox(
             height: 10,
           ),
           const CustomTextField(
-            label: 'AGE',
             hint: 'Enter your age',
           ),
           const SizedBox(
             height: 10,
           ),
           const CustomTextField(
-            label: 'ADRESSE EMAIL',
             hint: 'Enter your address email',
           ),
           const SizedBox(
             height: 10,
           ),
           const CustomTextField(
-            label: 'N° DU TELEPHONE  ',
             hint: 'Enter your telephone',
           ),
           const SizedBox(

@@ -49,13 +49,13 @@ class _NavbarState extends State<Navbar> {
               child: Icon(Icons.home_outlined),
             ),
             CurvedNavigationBarItem(
-              child: Icon(Icons.search),
+              child: Icon(Icons.person_2_outlined),
             ),
             CurvedNavigationBarItem(
-              child: Icon(Icons.chat_bubble_outline),
+              child: Icon(Icons.map_outlined),
             ),
             CurvedNavigationBarItem(
-              child: Icon(Icons.perm_identity),
+              child: Icon(Icons.houseboat_sharp),
             ),
           ],
           onTap: (index) {

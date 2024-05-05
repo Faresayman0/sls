@@ -49,10 +49,8 @@ class _LoginPageState extends State<LoginPage> {
             const ConstImage(),
             Padding(
               padding: const EdgeInsets.only(top: 40),
-              child: 
-              CustomTextField(
+              child: CustomTextField(
                 controller: _emailController,
-                label: 'Email',
                 hint: 'Enter your email address',
                 icon: Icons.email_outlined,
               ),
@@ -61,7 +59,6 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.only(top: 30),
               child: CustomTextField(
                 controller: _passwordController,
-                label: 'Password',
                 hint: 'Enter your Password',
                 icon: Icons.lock_outline_sharp,
               ),
@@ -82,10 +79,8 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Opacity(
               opacity: _isFieldsFilled ? 1.0 : 0.0,
-              child:
-               Center(
-                child: 
-                ElevatedButton(
+              child: Center(
+                child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -98,10 +93,10 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   onPressed: _isFieldsFilled
                       ? () {
-                         Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) {
-                    return const FirstScreenMap();
-                  }));
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return const FirstScreenMap();
+                          }));
                         }
                       : null,
                   child: const Text(
@@ -139,13 +134,11 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                   child: Image.asset("images/auth/devicon_google.png"),
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                   child: Image.asset("images/auth/gg_facebook.png"),
                 ),
               ],
@@ -153,10 +146,10 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 60),
             GestureDetector(
               onTap: () {
-                 Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) {
-                    return const RegisterPage();
-                  }));
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return const RegisterPage();
+                }));
               },
               child: Center(
                 child: RichText(
